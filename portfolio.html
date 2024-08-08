@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+    :root {
+      --red: #fa4f09;
+      --black: #333;
+      --white: #fff;
+      --light-color: #666;
+      --light-bg: #eee;
+    }
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      text-transform: capitalize;
+      -webkit-transition: all .2s linear;
+      transition: all .2s linear;
+    }
+
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      scroll-padding-top: 8rem;
+    }
+
+    html::-webkit-scrollbar {
+      width: 1rem;
+    }
+
+    html::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background: var(--red);
+      border-radius: 5rem;
+    }
+
+    body {
+      background: var(--white);
+   
+      background-color: #fa4f09 #676766 #999  #236768;
+    }
+
+    body.active {
+      --black: #fff;
+      --white: #111;
+      --light-color: #aaa;
+      --light-bg: #222;
+    }
+
+    section {
+      padding: 3rem 9%;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      border-radius: .5rem;
+      background: var(--light-bg);
+      cursor: pointer;
+      color: var(--black);
+      padding: 1rem 3rem;
+      font-size: 1.7rem;
+    }
+
+    .btn:hover {
+      background: var(--red);
+      color: #fff;
+      scroll-behavior: initial;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 4rem;
+      color: var(--black);
+    }
+
+    .heading span {
+      color: var(--red);
+    }
+
+    .header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--light-bg);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 2rem 9%;
+    }
+
+    .header .logo {
+      margin-right: auto;
+      color: var(red);
+      font-size: 2.5rem;
+    }
+
+    .header .logo i {
+      color: var(red);
+      background-color: red;
+    }
+
+    .header .navbar a {
+      margin-right: 2rem;
+      font-size: 1.3rem;
+      color: var(--light-color);
+    }
+
+    .header .navbar a:hover {
+      color: var(--red);
+      scroll-snap-type: proximity;
+    }
+
+    .header #menu-btn,
+    .header #theme-btn {
+      font-size: 2.5rem;
+      margin-left: 2rem;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    .header #menu-btn:hover,
+    .header #theme-btn:hover {
+      color: var(--red);
+    }
+
+    .header #menu-btn {
+      display: none;
+    }
+
+    .header #theme-btn.fa-sun {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .header .scroll-indicator {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      height: 1rem;
+      background: var(--red);
+    }
+
+    .home .box {
+      min-height: 70vh;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .home .box:nth-child(2) {
+      -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+      padding: 4rem 0;
+    }
+
+    .home .box .image {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+      flex: 1 1 42rem;
+    }
+
+    /* .home .box .image:hover{
+          transform: scale(1.3);
+          background:rgba(7, 235, 243, 0.2);
+          scroll-behavior: smooth;
+        } */
+
+    .home .box .image img {
+      width: 100%;
+      background-image: url('project_7.jpg');
+      
+      
+    }
+
+    .home img:hover{
+      color: #fa4f09;
+      background-color: greenyellow;
+      font-size: 1rem;
+      font-family: cursive;
+      background-image: url('course-2-5.jpg');
+      scroll-behavior: smooth;
+      transition: 5s;
+      transform: translate(2px);
+  
+      
+
+      
+      border: 2px solid gold;
+    }
+    .home .box .content {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+      flex: 1 1 42rem;
+    }
+
+    .home .box .content h3 {
+      font-size: 3rem;
+      color: var(--black);
+    }
+
+    /* .home .box .content h3:hover {
+          background-color: #2b16ec;
+          color: aliceblue;
+          transform: scale(1.5);
+          scroll-behavior: smooth;
+          transition: 1s;
+          position: relative;
+          cursor: pointer;
+          
+        
+        } */
+
+    .home .box .content p {
+      font-size: 1.5rem;
+      color: var(--black);
+      padding: 1rem 0;
+      line-height: 2;
+    }
+
+    button {
+      color: #fa4f09;
+    }
+
+    body {
+      background-color: antiquewhite;
+    }
+
+    button.intro_links {
+      margin: 0 20px 0 0;
+    }
+ 
+    
+    .services{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap:1.5rem;
+      float: left;
+      width: 33.33%;
+      padding: 55px;
+      border: 2px solid rgb(243, 232, 232);
+      background-color: white;
+      border-radius: 55px;
+      right: 2%;
+    
+      top: 33px;
+    gap: 20%;
+       position: relative;
+    
+       
+    transition: 4s;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section starts  -->
+
+  <header class="header">
+
+    <a href="#" class="logo"><img src="project_1.jpg" alt="portfolio" style="width: 40px;height: 60px;"><i
+        class=""></i></a>
+
+    <nav class="navbar">
+      <a href="./contact.html">CONTACT</a>
+      <a href="./services.html">THINGS I'VE DESIGNED</a>
+      <a href="./career.html">CAREER</a>
+      <a href="./about me.html ">ABOUT ME</a>
+      <a href="./journal.html">JOURNAL</a>
+     
+      
+     
+      
+
+      
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bar"></div>
+
+
+    <div class="scroll-indicator"></div>
+
+  </header>
+
+  <!-- header section ends -->
+  <section class="home" id="home">
+
+    <div class="box">
+      <div class="image">
+        <img src="contact-img.jpg" alt="" style="width:300px;height:350px;">
+  
+        
+      </div>
+      <div class="content">
+        <h2 style="color:rgba(4, 134, 91, 0.97);">Hello! my name is </h2><br>
+        <h3>vikas yadav</h3><br>
+
+        <p>I am a full stack developer Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, optio sunt cum
+          iusto provident ducimus asperiores ipsa soluta. Numquam exercitationem labore dolore commodi perferendis
+          maiores minima quia aspernatur, ad ipsa.</p>
+
+
+
+        <br>
+        <br>
+        <br> <button class="intro_links">learn more about me</button>
+        <button class="intro_links">discover recent work </button>
+      </div>
+    </div>
+
+</body>
+
+</html>
